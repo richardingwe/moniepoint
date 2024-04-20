@@ -34,7 +34,7 @@ const Dashboard = () => {
 					<div className='flex items-end space-x-4'>
 						<div className='space-y-3 mb-2'>
 							<div className='text-sm'>Total Balance</div>
-							<div className='text-[40px] leading-6'>$36, 254</div>
+							<div className='text-[40px] leading-6'>$36,254</div>
 						</div>
 						<div className='flex items-end space-x-2.5'>
 							<Icons.TrendUpIcon />
