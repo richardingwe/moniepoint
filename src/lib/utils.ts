@@ -6,7 +6,6 @@ export const currencySymbolMap = {
 	USD: "$",
 	GBP: "£",
 	EUR: "€",
-	jungle_coin: "",
 };
 
 export type currencySymbol = keyof typeof currencySymbolMap;

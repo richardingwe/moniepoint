@@ -3,6 +3,8 @@
 import Button from "@/components/global/Button";
 import Icons from "@/components/icons";
 import StatsCard from "../StatsCard";
+import RecentTransactions from "../RecentTransactions";
+import CashFlow from "../CashFlow";
 
 const Dashboard = () => {
 	const data = [
@@ -43,7 +45,7 @@ const Dashboard = () => {
 						<Button theme='plain' className='px-0'>
 							<div className='flex items-center space-x-2'>
 								<Icons.SeeIcon />
-								<div>View Analytics</div>
+								<div className='text-tc-light-gray'>View Analytics</div>
 							</div>
 						</Button>
 						<div className='h-8 w-[0.5px] bg-gray-700' />
@@ -77,6 +79,12 @@ const Dashboard = () => {
 					{data?.map((item, index) => {
 						return <StatsCard key={index} item={item} />;
 					})}
+				</div>
+			</section>
+			<section className='pt-32'>
+				<div className='container grid grid-cols-2 mt-10 gap-12'>
+					<RecentTransactions />
+					<CashFlow />
 				</div>
 			</section>
 		</>

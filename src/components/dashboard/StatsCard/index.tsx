@@ -14,7 +14,7 @@ type StatsCardProps = {
 
 const StatsCard = ({ item }: StatsCardProps) => {
 	return (
-		<article className='w-full bg-white drop-shadow-md px-10 py-8 space-y-6'>
+		<article className='w-full bg-white drop-shadow-sm px-10 py-8 space-y-6'>
 			{item.icon}
 			<div className='font-medium flex items-center space-x-4'>
 				<div className='uppercase'>{item.name}</div>
@@ -28,7 +28,12 @@ const StatsCard = ({ item }: StatsCardProps) => {
 				</div>
 			</div>
 			<div className='font-medium text-[32px] leading-6'>
-				{formatAmount(item.amount, "USD")}
+				{formatAmount(item.amount, "USD").split(".")[0]}
+				{item.name === "tax reserve" && (
+					<span className='text-xl text-tc-light-gray'>
+						.{formatAmount(item.amount, "USD").split(".")[1]}
+					</span>
+				)}
 			</div>
 		</article>
 	);
