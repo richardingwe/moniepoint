@@ -70,6 +70,7 @@ const CashFlow = () => {
 									"opacity-20 transition-all duration-500 group-hover:opacity-100",
 									{
 										"opacity-100": activeTab === tab.name,
+										"rotate-180": tab.name === "moneyOut",
 									}
 								)}>
 								<Icons.FlowIcon />
