@@ -12,7 +12,9 @@ type StatsCardProps = {
 		amount: number;
 		trendValue: number;
 		icon: JSX.Element;
+		iconHover?: JSX.Element;
 		actionText: string;
+		style?: string;
 	};
 	setStatsClicked: (name: string) => void;
 	statsClicked: string;
@@ -38,7 +40,18 @@ const StatsCard = ({ item, setStatsClicked, statsClicked }: StatsCardProps) => {
 				}
 			)}>
 			<div>
-				<div className='h-14 mb-5'>{item.icon}</div>
+				<div className='size-14 relative flex items-center justify-center mb-5'>
+					<span className='absolute left-0 top-0 transition-opacity duration-700 ease-in-out group-hover:opacity-0'>
+						{item.icon}
+					</span>
+					<span
+						className={cn(
+							"absolute left-1 top-1 transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100",
+							item?.style
+						)}>
+						{item.iconHover}
+					</span>
+				</div>
 				<div className='font-medium flex items-center space-x-4 h-4 mb-5'>
 					<div className='uppercase whitespace-nowrap'>{item.name}</div>
 					<div className='text-xs flex items-center space-x-2'>

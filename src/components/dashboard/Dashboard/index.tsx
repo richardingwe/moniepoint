@@ -16,6 +16,7 @@ const Dashboard = () => {
 			amount: 3384200,
 			trendValue: 12.1,
 			icon: <Icons.BusinessAccountIcon />,
+			iconHover: <Icons.BusinessAccount2Icon />,
 			actionText: "view account details",
 		},
 		{
@@ -23,6 +24,7 @@ const Dashboard = () => {
 			amount: 70000,
 			trendValue: -2.1,
 			icon: <Icons.TaxReserveIcon />,
+			iconHover: <Icons.TaxReserve2Icon />,
 			actionText: "edit tax automation",
 		},
 		{
@@ -30,7 +32,9 @@ const Dashboard = () => {
 			amount: 162300,
 			trendValue: 12.1,
 			icon: <Icons.BusinessSavingsIcon />,
+			iconHover: <Icons.BusinessSavings2Icon />,
 			actionText: "view account details",
+			style: "-left-1 top-0.5",
 		},
 	];
 	return (
@@ -101,7 +105,7 @@ const Dashboard = () => {
 				</div>
 			</section>
 			<section className='pt-32'>
-				<div className='container grid grid-cols-2 mt-10 gap-12'>
+				<div className='container grid grid-cols-2 mt-10 mb-20 gap-12'>
 					<RecentTransactions />
 					<CashFlow />
 				</div>
