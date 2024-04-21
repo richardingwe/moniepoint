@@ -132,7 +132,7 @@ const StatsCard = ({ item, setStatsClicked, statsClicked }: StatsCardProps) => {
 					setExpanded(!expanded);
 				}}
 				className={cn(
-					"w-8 scale-x-0 flex items-center justify-center absolute right-0 top-1/2 transform -translate-y-1/2 h-[calc(100%-80px)] bg-gray-100/60",
+					"w-8 scale-x-0 flex items-center justify-center absolute right-0 top-1/2 transform -translate-y-1/2 h-[calc(100%-64px)] bg-gray-100/60",
 					{
 						"scale-x-100": expanded,
 					}
