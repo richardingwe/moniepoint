@@ -5,11 +5,14 @@ import Icons from "@/components/icons";
 import StatsCard from "../StatsCard";
 import RecentTransactions from "../RecentTransactions";
 import CashFlow from "../CashFlow";
+import { useState } from "react";
 
 const Dashboard = () => {
+	const [statsClicked, setStatsClicked] = useState("");
+
 	const data = [
 		{
-			name: "buisness account",
+			name: "business account",
 			amount: 3384200,
 			trendValue: 12.1,
 			icon: <Icons.BusinessAccountIcon />,
@@ -23,7 +26,7 @@ const Dashboard = () => {
 			actionText: "edit tax automation",
 		},
 		{
-			name: "buisness savings",
+			name: "business savings",
 			amount: 162300,
 			trendValue: 12.1,
 			icon: <Icons.BusinessSavingsIcon />,
@@ -78,10 +81,23 @@ const Dashboard = () => {
 				</div>
 			</section>
 			<section className='bg-white relative'>
-				<div className='container flex items-center gap-x-14 absolute -top-24 left-1/2 -translate-x-1/2 transform'>
-					{data?.map((item, index) => {
-						return <StatsCard key={index} item={item} />;
-					})}
+				<div
+					dir={statsClicked === "business savings" ? "rtl" : "ltr"}
+					className='container flex items-center gap-x-14 absolute -top-24 left-1/2 -translate-x-1/2 transform'>
+					{}
+					{(statsClicked === "business savings" ? data.reverse() : data)?.map(
+						(item, index) => {
+							return (
+								<StatsCard
+									setStatsClicked={setStatsClicked}
+									key={item.name}
+									item={item}
+									index={index}
+									statsClicked={statsClicked}
+								/>
+							);
+						}
+					)}
 				</div>
 			</section>
 			<section className='pt-32'>

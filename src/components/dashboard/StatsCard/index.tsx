@@ -3,7 +3,7 @@
 import Button from "@/components/global/Button";
 import Icons from "@/components/icons";
 import { cn, formatAmount } from "@/lib/utils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Chart } from "../Chart";
 
 type StatsCardProps = {
@@ -14,15 +14,25 @@ type StatsCardProps = {
 		icon: JSX.Element;
 		actionText: string;
 	};
+	setStatsClicked: (name: string) => void;
+	statsClicked: string;
+	index: number;
 };
 
-const StatsCard = ({ item }: StatsCardProps) => {
+const StatsCard = ({ item, setStatsClicked, statsClicked }: StatsCardProps) => {
 	const [expanded, setExpanded] = useState(false);
+
+	useEffect(() => {
+		if (statsClicked !== item.name) {
+			setExpanded(false);
+		}
+	}, [statsClicked]);
 
 	return (
 		<article
+			dir='ltr'
 			className={cn(
-				"cursor-pointer transition-min-width min-w-[410px] relative bg-white group drop-shadow-sm px-10 py-8 h-[213px]",
+				"cursor-pointer transition-min-width min-w-[30%] relative bg-white group drop-shadow-sm px-10 py-8 h-[213px]",
 				{
 					"min-w-[820px] flex items-center": expanded,
 				}
@@ -55,9 +65,26 @@ const StatsCard = ({ item }: StatsCardProps) => {
 							"font-medium transform duration-300 transition-all mt-1.5 text-[32px] h-8 leading-6",
 							{
 								"group-hover:-translate-y-[200%]": !expanded,
+								"text-4xl": expanded,
 							}
 						)}>
-						{formatAmount(item.amount, "USD").split(".")[0]}
+						{expanded ? (
+							<div className='flex'>
+								<span className='text-2xl mr-1'>$</span>
+								<span>
+									{formatAmount(item.amount, "USD")
+										.split(".")[0]
+										.replace("$", "")}
+								</span>
+								{item.name === "tax reserve" && (
+									<span className='text-2xl mt-2 text-tc-light-gray'>
+										.{formatAmount(item.amount, "USD").split(".")[1]}
+									</span>
+								)}
+							</div>
+						) : (
+							<span>{formatAmount(item.amount, "USD").split(".")[0]}</span>
+						)}
 						{item.name === "tax reserve" && (
 							<span className='text-xl text-tc-light-gray'>
 								.{formatAmount(item.amount, "USD").split(".")[1]}
@@ -74,30 +101,36 @@ const StatsCard = ({ item }: StatsCardProps) => {
 						<Button theme='plain' className='border flex-1 h-11 capitalize'>
 							{item.actionText}
 						</Button>
-						<button onClick={() => setExpanded(true)}>
+						<button
+							onClick={() => {
+								setExpanded(true);
+								setStatsClicked(item.name);
+							}}>
 							<Icons.ChartIcon />
 						</button>
 					</div>
 				</div>
 			</div>
 			<div
-				className={cn("h-0 w-0 mt-40 overflow-hidden", {
-					"w-full h-[300px]": expanded,
+				className={cn("h-0 w-0 mt-0", {
+					"w-full h-[190px]": expanded,
 				})}>
-				{/* <Chart /> */}
-				<Icons.ChartImageIcon width='inherit' />
+				<Chart />
 			</div>
 			<div
 				className={cn(
-					"h-0 transition-height group-hover:h-1 absolute bottom-0 transform left-1/2 -translate-x-1/2 bg-[#DCDFE7]",
+					"h-0 transition-width group-hover:h-1 absolute bottom-0 transform left-1/2 -translate-x-1/2 bg-[#DCDFE7]",
 					{
 						"w-[calc(100%-80px)]": !expanded,
-						"w-full h-1 bg-[#C1B4F8]": expanded,
+						"w-[calc(100%-32px)] left-0 -translate-x-0 h-1 bg-[#C1B4F8]":
+							expanded,
 					}
 				)}
 			/>
 			<button
-				onClick={() => setExpanded(!expanded)}
+				onClick={() => {
+					setExpanded(!expanded);
+				}}
 				className={cn(
 					"w-8 scale-x-0 flex items-center justify-center absolute right-0 top-1/2 transform -translate-y-1/2 h-[calc(100%-80px)] bg-gray-100/60",
 					{
