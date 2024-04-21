@@ -49,12 +49,12 @@ const RecentTransactions = () => {
 					See All
 				</Link>
 			</div>
-			<div className='space-y-2 pt-2'>
+			<div className='pt-2'>
 				{data.map((item, index) => {
 					return (
 						<div
 							key={index}
-							className='px-5 py-2.5 border-b transition-all group hover:bg-gray-100 cursor-pointer flex items-center justify-between space-x-4'>
+							className='px-5 py-3 border-b transition-all group hover:bg-gray-100 cursor-pointer flex items-center justify-between space-x-4'>
 							<div className='flex w-[400px] transition-all items-center space-x-2.5 group-hover:pl-2.5'>
 								{item.icon}
 								<div className='space-y-1'>
