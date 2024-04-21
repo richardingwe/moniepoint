@@ -32,7 +32,7 @@ const StatsCard = ({ item, setStatsClicked, statsClicked }: StatsCardProps) => {
 		<article
 			dir='ltr'
 			className={cn(
-				"cursor-pointer transition-min-width min-w-[30%] relative bg-white group drop-shadow-sm px-10 py-8 h-[213px]",
+				"cursor-pointer transition-min-width min-w-[30%] duration-500 relative bg-white group drop-shadow-sm px-10 py-8 h-[213px]",
 				{
 					"min-w-[900px] flex items-center": expanded,
 				}
