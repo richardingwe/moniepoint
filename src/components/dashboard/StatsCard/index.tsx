@@ -34,7 +34,7 @@ const StatsCard = ({ item, setStatsClicked, statsClicked }: StatsCardProps) => {
 			className={cn(
 				"cursor-pointer transition-min-width min-w-[30%] relative bg-white group drop-shadow-sm px-10 py-8 h-[213px]",
 				{
-					"min-w-[820px] flex items-center": expanded,
+					"min-w-[900px] flex items-center": expanded,
 				}
 			)}>
 			<div>
