@@ -2,7 +2,7 @@
 const nextConfig = {
     reactStrictMode: true,
     compiler: {
-        removeConsole: process.env.NEXT_PUBLIC_ENVIRONMENT === 'production',
+        removeConsole: true,
     },
     async headers() {
         return [

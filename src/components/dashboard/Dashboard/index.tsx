@@ -17,6 +17,7 @@ const Dashboard = () => {
 			trendValue: 12.1,
 			icon: <Icons.BusinessAccountIcon />,
 			iconHover: <Icons.BusinessAccount2Icon />,
+			iconExpanded: <Icons.BusinessAccount3Icon />,
 			actionText: "view account details",
 		},
 		{
@@ -25,6 +26,7 @@ const Dashboard = () => {
 			trendValue: -2.1,
 			icon: <Icons.TaxReserveIcon />,
 			iconHover: <Icons.TaxReserve2Icon />,
+			iconExpanded: <Icons.TaxReserve3Icon />,
 			actionText: "edit tax automation",
 		},
 		{
@@ -33,6 +35,7 @@ const Dashboard = () => {
 			trendValue: 12.1,
 			icon: <Icons.BusinessSavingsIcon />,
 			iconHover: <Icons.BusinessSavings2Icon />,
+			iconExpanded: <Icons.BusinessSavings3Icon />,
 			actionText: "view account details",
 			style: "-left-1 top-0.5",
 		},

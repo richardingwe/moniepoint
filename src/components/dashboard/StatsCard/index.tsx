@@ -13,6 +13,7 @@ type StatsCardProps = {
 		trendValue: number;
 		icon: JSX.Element;
 		iconHover?: JSX.Element;
+		iconExpanded?: JSX.Element;
 		actionText: string;
 		style?: string;
 	};
@@ -41,15 +42,34 @@ const StatsCard = ({ item, setStatsClicked, statsClicked }: StatsCardProps) => {
 			)}>
 			<div>
 				<div className='size-14 relative flex items-center justify-center mb-5'>
-					<span className='absolute left-0 top-0 transition-opacity duration-700 ease-in-out group-hover:opacity-0'>
+					<span
+						className={cn(
+							"absolute left-0 top-0 transition-opacity duration-700 ease-in-out group-hover:opacity-0",
+							{
+								"opacity-0": expanded,
+							}
+						)}>
 						{item.icon}
 					</span>
 					<span
 						className={cn(
-							"absolute left-1 top-1 transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100",
-							item?.style
+							"absolute left-1 top-1 transition-opacity duration-700 ease-in-out opacity-0 ",
+							item?.style,
+							{
+								"group-hover:opacity-100": !expanded,
+							}
 						)}>
 						{item.iconHover}
+					</span>
+					<span
+						className={cn(
+							"absolute left-1 top-1 transition-opacity duration-700 ease-in-out opacity-0",
+							item?.style,
+							{
+								"opacity-100": expanded,
+							}
+						)}>
+						{item.iconExpanded}
 					</span>
 				</div>
 				<div className='font-medium flex items-center space-x-4 h-4 mb-5'>

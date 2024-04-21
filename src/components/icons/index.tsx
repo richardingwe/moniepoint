@@ -16,10 +16,13 @@ import MoreIcon from "/public/assets/icons/more.svg";
 import StarIcon from "/public/assets/icons/star.svg";
 import BusinessAccountIcon from "/public/assets/icons/business-account.svg";
 import BusinessAccount2Icon from "/public/assets/icons/business-account-2.svg";
+import BusinessAccount3Icon from "/public/assets/icons/business-account-3.svg";
 import TaxReserveIcon from "/public/assets/icons/tax-reserve.svg";
 import TaxReserve2Icon from "/public/assets/icons/tax-reserve-2.svg";
+import TaxReserve3Icon from "/public/assets/icons/tax-reserve-3.svg";
 import BusinessSavingsIcon from "/public/assets/icons/business-savings.svg";
 import BusinessSavings2Icon from "/public/assets/icons/business-savings-2.svg";
+import BusinessSavings3Icon from "/public/assets/icons/business-savings-3.svg";
 import RecentTransactionsIcon from "/public/assets/icons/recent-transactions.svg";
 import CashFlowIcon from "/public/assets/icons/cash-flow.svg";
 import StripeIcon from "/public/assets/icons/stripe.svg";
@@ -50,10 +53,13 @@ const Icons = {
 	StarIcon,
 	BusinessAccountIcon,
 	BusinessAccount2Icon,
+	BusinessAccount3Icon,
 	TaxReserveIcon,
 	TaxReserve2Icon,
+	TaxReserve3Icon,
 	BusinessSavingsIcon,
 	BusinessSavings2Icon,
+	BusinessSavings3Icon,
 	RecentTransactionsIcon,
 	CashFlowIcon,
 	StripeIcon,
