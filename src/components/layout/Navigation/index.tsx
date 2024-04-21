@@ -16,19 +16,19 @@ const Navigation = () => {
 		},
 		{
 			name: "Transactions",
-			path: "/transactions",
+			path: "/dashboard",
 		},
 		{
 			name: "Cards",
-			path: "/cards",
+			path: "/dashboard",
 		},
 		{
 			name: "Invoices",
-			path: "/invoices",
+			path: "/dashboard",
 		},
 		{
 			name: "Insights",
-			path: "/insights",
+			path: "/dashboard",
 		},
 	];
 
