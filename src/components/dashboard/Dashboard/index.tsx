@@ -13,18 +13,21 @@ const Dashboard = () => {
 			amount: 3384200,
 			trendValue: 12.1,
 			icon: <Icons.BusinessAccountIcon />,
+			actionText: "view account details",
 		},
 		{
 			name: "tax reserve",
 			amount: 70000,
 			trendValue: -2.1,
 			icon: <Icons.TaxReserveIcon />,
+			actionText: "edit tax automation",
 		},
 		{
 			name: "buisness savings",
 			amount: 162300,
 			trendValue: 12.1,
 			icon: <Icons.BusinessSavingsIcon />,
+			actionText: "view account details",
 		},
 	];
 	return (
@@ -75,7 +78,7 @@ const Dashboard = () => {
 				</div>
 			</section>
 			<section className='bg-white relative'>
-				<div className='container grid grid-cols-3 gap-x-14 absolute -top-24 left-1/2 -translate-x-1/2 transform'>
+				<div className='container flex items-center gap-x-14 absolute -top-24 left-1/2 -translate-x-1/2 transform'>
 					{data?.map((item, index) => {
 						return <StatsCard key={index} item={item} />;
 					})}

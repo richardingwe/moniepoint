@@ -26,6 +26,9 @@ import SpotifyIcon from "/public/assets/icons/spotify.svg";
 import FlowIcon from "/public/assets/icons/flow.svg";
 import DownIcon from "/public/assets/icons/down.svg";
 import TrackIcon from "/public/assets/icons/track.svg";
+import ChartIcon from "/public/assets/icons/chart.svg";
+import CaretIcon from "/public/assets/icons/caret.svg";
+import ChartImageIcon from "/public/assets/icons/chart-image.svg";
 
 const Icons = {
 	LogoIcon,
@@ -54,6 +57,9 @@ const Icons = {
 	FlowIcon,
 	DownIcon,
 	TrackIcon,
+	ChartIcon,
+	CaretIcon,
+	ChartImageIcon,
 };
 
 export default Icons;
